@@ -75,29 +75,3 @@ if __name__ == "__main__":
 
 	commands[args.command](args)
 
-
-
-# usage = """
-# usage:
-# 	uva_cli.py <command> [args]
-
-# commands:
-# 	login    create a login session for UVa online judge.
-# 	submit 	 submit file to UVa online judge
-# 	list	 list submittion result
-# """
-
-# commands = {
-# 	"login": 	do_login,
-# 	"submit":	do_submit,
-# 	"list":		do_list
-# }
-
-
-# def parse_command():
-# 	if len(args) == 0 or args[0] not in commands:
-# 		print usage
-# 		exit(1)
-# 	action = commands[args[0]]
-# 	args = args[1:]
-# 	action()
