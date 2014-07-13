@@ -28,15 +28,10 @@ def get_session():
 	return pickle.load(open(session_file_name))
 
 def write_session(session):
-	pickle.dump(session, open(session_file_name, 'w'))
-	open(session_checksum_name, 'w').write(md5(open(session_file_name).read()).hexdigest())
+	try:
+		pickle.dump(session, open(session_file_name, 'w'))
+		open(session_checksum_name, 'w').write(md5(open(session_file_name).read()).hexdigest())
+	except:
+		print "Saving session failed!\n Check if you have permission to access \"{0}\" and \"{1}\"".format(session_file_name, session_checksum_name)
+		exit(1)
 
-
-if __name__ == '__main__':
-	x = [1, 2, 'abc']
-	session_file_name = "temp1"
-	session_checksum_name = "temp2"
-	write_session(x)
-	print exist_session_file()
-	print is_valid_session_file()
-	print get_session()
