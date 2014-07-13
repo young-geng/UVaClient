@@ -5,7 +5,7 @@ from sys import stderr
 
 
 def is_logged_in(session):
-	r = requests.get("http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=9")
+	r = session.get("http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=9")
 	return r.text.find("You need to login") == -1
 
 def login(username, password):
@@ -29,8 +29,6 @@ def login(username, password):
 
 	login_url = 'http://uva.onlinejudge.org/index.php?option=com_comprofiler&task=login'
 	r = session.post(login_url, data=post_data)
-	r = session.get('http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=9')
-	if r.text.find("You are not authorised to view this resource.") != -1:
-		stderr.write("Login failed!\n")
-		return None
+	#stderr.write(r.text)
 	return session
+
