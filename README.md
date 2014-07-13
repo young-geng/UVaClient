@@ -5,7 +5,9 @@ Command Line Client for UVa Online Judge
 
 ### Dependancy
 python 2.7
+
 BeautifulSoup 4.3
+
 requests 2.2
 
 
