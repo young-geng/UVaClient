@@ -3,12 +3,9 @@ import requests
 from hashlib import md5
 import os
 
-session_file_name = ".uva_session"
-session_checksum_name = ".uva_session_checksum"
-
 user_home = os.getenv('USERPROFILE') or os.getenv('HOME')
-session_file_name = os.path.join(user_home, session_file_name)
-session_checksum_name = os.path.join(user_home, session_checksum_name)
+session_file_name = os.path.join(user_home, ".uva_session")
+session_checksum_name = os.path.join(user_home, ".uva_session_checksum")
 
 
 def exist_session_file():

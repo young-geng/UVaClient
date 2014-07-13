@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from session_store import write_session
 import requests
 import re
 from sys import stdout
@@ -47,7 +48,13 @@ def print_result_table(result_table):
 def get_result_page(session, limit):
 	assert type(limit) == int and limit >= 1
 	url = """http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=9&limit={0}&limitstart=0""".format(limit)
-	return session.get(url).text
+	try:
+		page = session.get(url).text
+	except requests.exceptions.ConnectionError:
+		print "Connection error, please try again later"
+		write_session(session)
+		exit(1)
+	return page
 
 
 def print_result(session, limit):

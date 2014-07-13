@@ -35,6 +35,7 @@ def do_submit(args):
 		exit(1)
 	submit(session, args.problem_ID, args.language, src)
 	print "File submitted!"
+	write_session(session)
 
 def do_list(args):
 	session = get_session()
@@ -45,6 +46,7 @@ def do_list(args):
 		print "Invalid limit number!"
 		exit(1)
 	print_result(session, args.limit)
+	write_session(session)
 
 
 	
