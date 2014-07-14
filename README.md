@@ -16,7 +16,7 @@ Quick Start
 	python uva_cli.py login
 
 	python uva_cli.py list
-	python uva_cli.py list [-l/--list] "number of submission"
+	python uva_cli.py list [-l/--limit] "number of submission"
 
 	python uva_cli.py submit "{c, c++, c++11, java, pascal}" "proble ID" "file"
 
