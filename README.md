@@ -57,7 +57,7 @@ Tips
 	On windows operating system, you can create a bat script uva.bat, and add it to your path
 
 		@echo off
-		python <yout uva_cli.py path> %*
+		python <your uva_cli.py path> %*
 
 
 
