@@ -46,11 +46,11 @@ Tips
 
 	On unix like operating system, you can
 
-		add an alias to your .bashrc or .bash_profile
+		#add an alias to your .bashrc or .bash_profile
 
 			alias uva="python <your uva_cli.py path>"
 
-		or create an simbolic link
+		#or create an simbolic link
 
 			ln -s <your uva_cli.py path> ~/bin/lx
 
